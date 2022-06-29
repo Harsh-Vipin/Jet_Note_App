@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.dp
 import com.harsh.jetnoteapp.R
 import com.harsh.jetnoteapp.components.InputTextBox
 import com.harsh.jetnoteapp.components.MyButton
-import com.harsh.jetnoteapp.data.NotesDataSource
+
 import com.harsh.jetnoteapp.model.Note
 import java.time.format.DateTimeFormatter
 
@@ -34,7 +34,7 @@ import java.time.format.DateTimeFormatter
 //@Preview(showBackground = true)
 fun NoteScreen(
     notes: List<Note>,
-    onAddNote: (Note) -> Unit ,
+    onAddNote: (Note) -> Unit,
     onRemoveNote: (Note) -> Unit
 
 ) {
@@ -100,12 +100,12 @@ fun NoteRow(
             .fillMaxWidth(), color = Color(0xffdfe6eb), elevation = 6.dp
     ) {
         Column(modifier = Modifier
-            .clickable {onNoteClicked(note) }
+            .clickable { onNoteClicked(note) }
             .padding(horizontal = 14.dp, vertical = 6.dp), horizontalAlignment = Alignment.Start) {
             Text(text = note.title, style = MaterialTheme.typography.subtitle2)
             Text(text = note.description, style = MaterialTheme.typography.subtitle1)
             Text(
-                text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, d MMM")),
+                text = note.entryDate.toString(),
                 style = MaterialTheme.typography.caption
             )
 
